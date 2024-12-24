@@ -114,7 +114,7 @@ fn main() {
     let output_dir = "frames";
 
     // 提取视频帧!
-    // extract_frames(video_path, output_dir);
+    extract_frames(video_path, output_dir);
 
     
     let frame_files = fs::read_dir(output_dir).expect("Failed to read frames directory");
