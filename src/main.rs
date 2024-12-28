@@ -41,7 +41,7 @@ fn extract_frames(video_path: &str, output_dir: &str) {
         println!("Failed to extract frames: {}", String::from_utf8_lossy(&output.stderr));
     }
 }
-
+#[inline(never)]
 fn process_image(image_path: &str,emoji_lenth:u32) -> String {
    
     let img = image::open(image_path).expect("Failed to open image");
@@ -94,7 +94,7 @@ fn process_image(image_path: &str,emoji_lenth:u32) -> String {
                 r if r >= 0.3 => '🌔', // 盈凸月
                 r if r >= 0.1 => '🌕', // 满月
                 _ => '🌖',             // 亏凸月
-            };
+            };//该死的怎么这么多月亮啊
 
             
             emojis.push(emoji);
